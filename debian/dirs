@@ -1,0 +1,10 @@
+/usr/share/icinga-mobile
+/usr/share/icinga-mobile/htdocs
+/usr/share/icinga-mobile/htdocs/icons
+/usr/share/icinga-mobile/htdocs/lib
+/usr/share/icinga-mobile/htdocs/lib/sencha
+/usr/share/icinga-mobile/htdocs/deploy
+/usr/share/icinga-mobile/htdocs/src/css
+
+/etc/icinga-mobile
+/etc/apache2/conf.d

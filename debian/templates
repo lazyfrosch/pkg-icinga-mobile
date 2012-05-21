@@ -1,0 +1,5 @@
+Template: icinga-mobile/icinga-web-url
+Type: string
+Description: URL to your Icinga Web Installation:
+ This URL has to be available directly from your smartphone.
+

@@ -1,0 +1,36 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+case "$1" in
+    configure)
+    # reload apache for config changes
+	if [ -x $(which invoke-rc.d) ]; then
+		invoke-rc.d apache2 reload
+	else
+		/etc/init.d/apache2 reload
+    fi
+
+    # write Icinga Web URL to settings file
+    db_get icinga-mobile/icinga-web-url
+    url=${RET}
+    sed 's^_ICINGA_WEB_URL_^'"$url"'^' /usr/share/icinga-mobile/htdocs/deploy/local.js.in >/usr/share/icinga-mobile/htdocs/deploy/local.js.tmp
+    ucf --debconf-ok /usr/share/icinga-mobile/htdocs/deploy/local.js.tmp /usr/share/icinga-mobile/htdocs/deploy/local.js
+    echo "written local.js"
+    
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

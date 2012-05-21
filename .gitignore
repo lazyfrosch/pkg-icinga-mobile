@@ -1,0 +1,17 @@
+#-- for debian
+debian/icinga-mobile/
+debian/*.log
+debian/*.substvars
+debian/*.debhelper
+debian/files
+debian/tmp/
+.pc/
+
+#-- from upstream
+Makefile
+configure
+config.log
+config.status
+autom4te.cache
+etc/apache/icinga-mobile.conf
+

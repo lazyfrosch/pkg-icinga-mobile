@@ -1,0 +1,8 @@
+icons/* /usr/share/icinga-mobile/htdocs/icons
+lib/sencha/ext-touch.js /usr/share/icinga-mobile/htdocs/lib/sencha
+deploy/IcingaMobile-compiled.js /usr/share/icinga-mobile/htdocs/deploy
+src/css/* /usr/share/icinga-mobile/htdocs/src/css
+
+debian/apache.conf /etc/icinga-mobile
+debian/index.html /usr/share/icinga-mobile/htdocs
+debian/local.js.in /usr/share/icinga-mobile/htdocs/deploy

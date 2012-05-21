@@ -1,0 +1,5 @@
+Ext.onReady(function() {
+// set icinga-web url (be warned "oa" is a compressed name for the setConfigVar setting and could be changed)
+IConf.oa('icinga_url', '_ICINGA_WEB_URL_');
+if(IConf.k('icinga_apikey') == '') { IConf.oa('icinga_apikey', 'noKey'); } // this is a "bugfix" for the case the user saves with an empty apikey
+});

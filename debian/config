@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+db_get icinga-mobile/icinga-web-url
+url=${RET}
+
+if [ "$url" = "" ]; then
+    name=$(hostname --fqdn)
+    db_set icinga-mobile/icinga-web-url "http://$name/icinga-web" || true
+    db_go || true
+fi
+
+db_input medium icinga-mobile/icinga-web-url || true
+
+db_go || true
+
+#DEBHELPER#
+
