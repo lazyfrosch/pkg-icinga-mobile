@@ -6,3 +6,6 @@ src/css/* /usr/share/icinga-mobile/htdocs/src/css
 debian/apache.conf /etc/icinga-mobile
 debian/index.html /usr/share/icinga-mobile/htdocs
 debian/local.js.in /usr/share/icinga-mobile/htdocs/deploy
+
+debian/apple-touch-icon.png /usr/share/icinga-mobile/htdocs
+debian/favicon.ico /usr/share/icinga-mobile/htdocs
